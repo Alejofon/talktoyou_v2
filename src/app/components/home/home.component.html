@@ -1,0 +1,25 @@
+<div id="container">
+    <div id="button">
+        P
+        <div id="dropdown">
+            <ul>
+                <li *ngFor="let option of options">
+                    <a href="#">{{option.name}}</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="generalcontainer">
+    <div class="column" id="left-publi">
+        <app-leftpubli></app-leftpubli>
+    </div>
+    <div class="column larger" id="search-call">
+        <app-searchcall></app-searchcall>
+    </div>
+    <div class="column" id="right-publi">
+        <app-rightpubli></app-rightpubli>
+    </div>
+
+</div>

@@ -1,0 +1,91 @@
+#container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 10vw;
+    height: 6vh;
+    padding: 10px;
+
+    #button {
+        border: 1px rgb(113, 243, 238);
+        background-color: rgba(48, 48, 48, 0.81);
+        padding: 8px 20px;
+        display: inline-block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 20px;
+        box-shadow: 1px 2px 3px rgba(240, 1, 253, 0.5), 2px 1px 3px rgba(0, 234, 255, 0.5);
+        cursor: pointer;
+        position: relative;
+        background: linear-gradient(to right, rgb(255, 79, 176), rgb(75, 255, 255));
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-size: large;
+
+
+    }
+
+    #dropdown {
+        display: none;
+        position: absolute;
+        width: 200px;
+        min-height: 10hv;
+        max-height: 50hv;
+        overflow: auto;
+        box-shadow: 0 0 5px rgba(63, 239, 227, 0.261);
+        background-color: rgba(0, 197, 247, 0.173);
+        border-radius: 5px;
+        top: 120%;
+        left: 20%;
+        border: 1px white;
+
+        ul {
+            list-style: none;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 1px 1px;
+            display: block;
+
+            &:hover {
+                background-color: rgba(244, 175, 255, 0.693);
+            }
+
+        }
+
+    }
+
+    &:hover {
+        #dropdown {
+            display: block;
+        }
+    }
+
+    #dropdown:hover {
+        display: block;
+    }
+
+}
+
+.generalcontainer {
+
+    display: flex;
+
+}
+
+.column {
+    flex: 1;
+    /* Hacemos que todas las columnas se expandan para ocupar el mismo espacio */
+    padding: 10px;
+    /* Añadimos un poco de espacio entre las columnas */
+}
+
+.larger {
+    flex: 3;
+}

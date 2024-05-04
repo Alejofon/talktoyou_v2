@@ -1,0 +1,42 @@
+<div class="global-container">
+  <div class="cont-titulo">
+    <h1 class="bienvenido">BIENVENIDO A <strong class="talk">TALK TO YOU</strong></h1>
+    <h2 class="empecemos">Una comunidad para practicar idiomas !Empecemos¡</h2>
+  </div>
+  <div class="cont-formulario">
+    <form class="row g-3" [formGroup]="createUser" (ngSubmit)="register()">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput1" placeholder="" formControlName="userName"
+          [class.is-invalid]="nameValidate">
+        <label for="floatingInput1">Nombre Usuario</label>
+        <small *ngIf="nameValidate" class="text-danger">Ingrese un nombre de minimo 5 caracteres sin numeros o
+          caracteres especiales.</small>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput2" placeholder="name@example.com"
+          formControlName="email" [class.is-invalid]="emailValidate">
+        <label for="floatingInput2">Email</label>
+        <small *ngIf="emailValidate" class="text-danger">Ingrese un email valido.</small>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword1" placeholder="Password"
+          formControlName="password" [class.is-invalid]="passwordValidate">
+        <label for="floatingPassword1">Contraseña</label>
+        <small *ngIf="passwordValidate" class="text-danger">Ingrese una contraseña de minimo 8 caracteres.</small>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword2" placeholder="Password"
+          formControlName="re_password" [class.is-invalid]="rePaswordValidate">
+        <label for="floatingPassword2">Confirmar contraseña</label>
+        <small *ngIf="submitted && validatePassword" class="text-danger">La contraseña no coincide.</small>
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+      </div>
+
+    </form>
+  </div>
+  <div class="cont-sesion">
+    Si ya tines una cuenta <a class="sesion" routerLink="/login">Inicia sesion</a>
+  </div>
+</div>

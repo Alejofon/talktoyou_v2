@@ -1,0 +1,35 @@
+<div class="global-container">
+  <div class="cont-titulo">
+    <h1 class="bienvenido">BIENVENIDO A <strong class="talk">TALK TO YOU</strong></h1>
+    <h2 class="empecemos">Una comunidad para practicar idiomas !Empecemos¡</h2>
+  </div>
+  <div class="cont-formulario">
+    <form class="row g-3" [formGroup]="loginUser" (ngSubmit)="login()">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput2" placeholder="name@example.com"
+          formControlName="email" [class.is-invalid]="emailValidate">
+        <label for="floatingInput2">Email</label>
+        <small *ngIf="emailValidate" class="text-danger">Ingrese un email valido.</small>
+      </div>
+
+      <div class="form-floating">
+        <input id="floatingPassword2" type="{{ mostrarContrasena ? 'text' : 'password' }}" class="form-control"
+          formControlName="password" placeholder="Password" [class.is-invalid]="passwordValidate">
+        <label for="floatingPassword2">Contraseña</label>
+        <small *ngIf="passwordValidate" class="text-danger">Ingrese una contraseña valida.</small>
+        <div style="margin-top: 5px; cursor: pointer;" (click)="togglePasswordVisibility()">
+          {{ mostrarContrasena ? 'Ocultar contraseña' : 'Mostrar contraseña' }}
+        </div>
+      </div>
+
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+      </div>
+
+    </form>
+  </div>
+  <div class="cont-sesion">
+    Si no tienes una cuenta aún <a class="sesion" routerLink="/registro">REGISTRATE!</a>
+  </div>
+</div>

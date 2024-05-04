@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "talktoyouv2": {
+      "hosting": {
+        "front_talk_to_you": [
+          "talktoyouv2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "talktoyouv2"
+  }
+}
