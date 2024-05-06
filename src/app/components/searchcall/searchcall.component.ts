@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LanguagesService} from '../../services/languages.service'
 
 @Component({
   selector: 'app-searchcall',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./searchcall.component.css']
 })
 export class SearchcallComponent {
+
+  optionselected: any 
+  languagues: string[]
+
+  constructor(private idiomas:LanguagesService){
+    this.languagues = this.idiomas.getlanguages_spanish('spanish')
+  }
 
 }

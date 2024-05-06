@@ -21,6 +21,7 @@
         -webkit-background-clip: text;
         background-clip: text;
         font-size: large;
+        margin-left: 20%;
 
 
     }
@@ -32,12 +33,13 @@
         min-height: 10hv;
         max-height: 50hv;
         overflow: auto;
-        box-shadow: 0 0 5px rgba(63, 239, 227, 0.261);
-        background-color: rgba(0, 197, 247, 0.173);
+        box-shadow: 1px 2px 3px rgba(240, 1, 253, 0.5), 2px 1px 3px rgba(0, 234, 255, 0.5);
+        background-color: rgba(129, 129, 129, 0.518);
         border-radius: 5px;
         top: 120%;
         left: 20%;
         border: 1px white;
+        padding: 5px;
 
         ul {
             list-style: none;
@@ -54,7 +56,9 @@
             display: block;
 
             &:hover {
-                background-color: rgba(244, 175, 255, 0.693);
+                background-color: rgba(220, 220, 220, 0.693);
+                border-radius: 10px;
+                padding: 5px;
             }
 
         }
@@ -87,5 +91,5 @@
 }
 
 .larger {
-    flex: 3;
+    flex: 3 ;
 }

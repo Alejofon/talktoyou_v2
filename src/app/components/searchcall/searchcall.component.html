@@ -1,9 +1,31 @@
+<div class="title">
+    <h1>TALK TO YOU</h1>
+    <H3>Elige un idioma, selecciona una sala y ponte a practicar. </H3>
+</div>
 <div class="general-container">
+
     <div class="search-call">
 
+        <div class="row">
+            <div class="col">
+                <label for="exampleDataList" class="form-label">Selecciona el idioma que quieres practicar.</label>
+                <input list="datalistOptions" id="idiomaDataList" placeholder="Busca un idioma...">
+                <datalist id="datalistOptions">
+                    <option *ngFor="let languague of languagues" [value]="languague"></option>
+                </datalist>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="exampleDataList" class="form-label">Selecciona el idioma que quieres practicar.</label>
+                <input list="datalistOptions" id="idiomaDataList" placeholder="Busca un idioma...">
+                <datalist id="datalistOptions">
+                    <option *ngFor="let languague of languagues" [value]="languague"></option>
+                </datalist>
+            </div>
+        </div>
     </div>
     <div class="calls-result">
 
     </div>
-
 </div>
