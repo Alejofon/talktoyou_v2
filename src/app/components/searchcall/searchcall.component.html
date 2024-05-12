@@ -16,13 +16,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <label for="exampleDataList" class="form-label">Selecciona el idioma que quieres practicar.</label>
-                <input list="datalistOptions" id="idiomaDataList" placeholder="Busca un idioma...">
-                <datalist id="datalistOptions">
-                    <option *ngFor="let languague of languagues" [value]="languague"></option>
+            <div class="col2">
+                <label for="DataList" class="form-label">Selecciona el nivel que mejor se adapte a ti.</label>
+                <input list="levelOptions" id="levelDataList" placeholder="Selecciona un nivel...">
+                <datalist id="levelOptions">
+                    <option *ngFor="let level of levels" [value]="level"></option>
                 </datalist>
+                <button id="buscar_button">BUSCAR</button>
             </div>
+        </div>
+        <div class="Descripciones">
+            <ul>
+                <li *ngFor="let description of descriptions" id="descripciones">{{description}}</li>
+            </ul>
         </div>
     </div>
     <div class="calls-result">
