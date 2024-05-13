@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col2">
                 <label for="DataList" class="form-label">Selecciona el nivel que mejor se adapte a ti.</label>
-                <input list="levelOptions" id="levelDataList" placeholder="Selecciona un nivel...">
+                <input list="levelOptions" id="levelDataList" placeholder="Selecciona un nivel..." >
                 <datalist id="levelOptions">
                     <option *ngFor="let level of levels" [value]="level"></option>
                 </datalist>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {LanguagesService} from '../../services/languages.service';
-import {LevelsService} from '../../services/levels.service'
+import {LevelsService} from '../../services/levels.service';
+import {call} from '../../interfaces/call.interface'
 
 @Component({
   selector: 'app-searchcall',
