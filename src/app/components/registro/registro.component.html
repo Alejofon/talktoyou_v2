@@ -25,9 +25,9 @@
         <small *ngIf="passwordValidate" class="text-danger">Ingrese una contraseña de minimo 8 caracteres.</small>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword2" placeholder="Password"
+        <input type="password" class="form-control" id="floatingPassword3" placeholder="Password"
           formControlName="re_password" [class.is-invalid]="rePaswordValidate">
-        <label for="floatingPassword2">Confirmar contraseña</label>
+        <label for="floatingPassword3">Confirmar contraseña</label>
         <small *ngIf="submitted && validatePassword" class="text-danger">La contraseña no coincide.</small>
       </div>
       <div class="d-grid gap-2 col-6 mx-auto">
