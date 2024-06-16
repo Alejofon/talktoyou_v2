@@ -3,35 +3,61 @@ import { room } from '../interfaces/room.interface'
 import { Usuario } from '../interfaces/usuario.interface';
 import { push } from '@angular/fire/database';
 import { call } from '../interfaces/call.interface';
+import { Mutex } from 'async-mutex';
+import { BehaviorSubject, firstValueFrom } from 'rxjs';
+import { Route, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomsService {
 
-  roomsActive?: room[]
+  roomsActive: room[] = []
+  private roomSubject = new BehaviorSubject<room[]>(this.roomsActive)
 
-  constructor() { }
+  constructor(private rute: Router) { }
 
-  createRoom(user: number, call: call) {
+  getrooms() {
+    return this.roomSubject.asObservable()
+  }
 
-    const now = new Date()
+  async findRooms(user: number, call: call): Promise<room> {
+    const rooms = await firstValueFrom(this.roomSubject)
 
-    const newRoom: room = {
-      id: this.createID(),
-      capacity: 5,
-      id_participants: [user],
-      languague: call.idioma,
-      level: call.nivel,
-      start: now,
+    let availableRoom = rooms.find(room => room.busy < room.capacity)
+
+    if (availableRoom) {
+      availableRoom.busy = + 1
+      this.roomSubject.next(rooms)
+      return availableRoom
+    } else {
+      const now = new Date()
+
+      const newRoom: room = {
+        id: this.createID(),
+        capacity: 5,
+        busy: 1,
+        id_participants: [user],
+        languague: call.idioma,
+        level: call.nivel,
+        start: now,
+      }
+
+      rooms.push(newRoom)
+      this.roomSubject.next(rooms)
+      return newRoom
     }
-
-    console.log(newRoom)
 
   }
 
+  async joinRoom(user: number, call: call){
+    const room = this.findRooms(user, call)
+    this.rute.navigate([`/call/${(await room).id}`])
+  }
+
+
   createID() {
-    
+
     const itemCount = this.roomsActive?.length
 
     const now = new Date();
