@@ -1,1 +1,13 @@
-<p>call works!</p>
+<div class="generall_Call">
+
+    <div class="participants">
+        <div *ngIf="room">
+            <h1>Participantes</h1>
+            <li *ngFor="let user of users">{{user}}</li>
+        </div>
+    </div>
+    <div class="meeting">
+        <iframe class="llamada" *ngIf="meetingURL" [src]="meetingURL" allow="camara; microphone; fullscreen; dysplay-capture"></iframe>
+    </div>
+
+</div>

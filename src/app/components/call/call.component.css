@@ -1,0 +1,13 @@
+.generall_Call{
+    display: flex;
+}
+
+.meeting{
+    min-width: 500px;
+    min-height: 50%;
+
+}
+.llamada{
+    min-width: 500px;
+    min-height: 500px;
+}
