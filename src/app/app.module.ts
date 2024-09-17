@@ -37,7 +37,7 @@ import { SearchcallComponent } from './components/searchcall/searchcall.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp({"projectId":"talktoyouv2","appId":"1:952562668613:web:41bae8c3d34b36e936bf2c","storageBucket":"talktoyouv2.appspot.com","apiKey":"AIzaSyB26jYS9tV75cDGMXXq3OXQQBKbFKWdtHM","authDomain":"talktoyouv2.firebaseapp.com","messagingSenderId":"952562668613"})),
+    provideFirebaseApp(() => initializeApp({})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),
